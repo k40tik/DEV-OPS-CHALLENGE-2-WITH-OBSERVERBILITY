@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: app
+spec:
+  replicas: 2
+  selector:
+    app: backend-deployment
+  template:
+    metadata:
+      labels:
+        app: backend-deployment
+    spec:
+      containers:
+        - name: backend-deployment
+          image: k40t1kke/event-backend-deployment:latest
+          ports:
+            - containerPort: 80 
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "100m"
+            limits:
+              memory: "128Mi"
+              cpu: "200m"
+          livenessProbe:
+            httpGet:  
+             path: /api/health
+             port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:  
+             path: /api/health
+             port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+       
