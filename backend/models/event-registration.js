@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const eventRegistrationSchema = new mongoose.Schema({
-    registerID: {
-        type: String,
-        required:true,
-        unique: true
-    },
+    // registerID: {
+    //     type: String,
+    //     required:true,
+    //     unique: true
+    // },
         name :{
         type: String,
         required:true,
