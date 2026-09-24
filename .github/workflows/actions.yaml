@@ -1,4 +1,4 @@
-namme: GitOPS pipeline with monitoring, observerbility and alert
+name: GitOPS pipeline with monitoring, observerbility and alert
 
 on:
   push:
