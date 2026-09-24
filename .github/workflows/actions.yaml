@@ -1,0 +1,24 @@
+namme: GitOPS pipeline with monitoring, observerbility and alert
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  ARGOCD_PASSWORD: ${{secrets.ARGOCD_PASSWORD}}
+	ARGOCD_SERVER: ${{secrets.ARGOCD_SERVER}}
+  ARGOCD_USERNAME: ${{secrets.ARGOCD_USERNAME}}
+  DOCKERHUB_TOKEN: ${{secrets.DOCKERHUB_TOKEN}}
+	DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
+  PERSONAL_ACCESS_TOKEN: ${{secrets.PERSONAL_ACCESS_TOKEN}}
+
+jobs:
+  build:
+    runs-n: ubuntu-latest
+    steps:
+      - name: checkout-code
+        uses: actions/chckeout@v3
+        with:
+          token: ${{secrets.PERSONAL_ACCESS_TOKEN}}
+          fetch-depth: 0
