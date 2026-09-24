@@ -15,7 +15,7 @@ env:
 
 jobs:
   build:
-    runs-n: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: checkout-code
         uses: actions/chckeout@v3
