@@ -29,7 +29,7 @@ if (form && nameInput && emailInput) {
         }
 
         try {
-            const response = await fetch('http://localhost:3000/api/event-registration', {
+            const response = await fetch('https://dev-ops-challenge-2-with-observerbility.onrender.com/api/event-registration', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
